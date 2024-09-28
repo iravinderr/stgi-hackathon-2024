@@ -3,10 +3,8 @@ import { asyncHandler } from "../utils/handler.utils.js";
 import { ErrorResponse, SuccessResponse } from "../utils/responses.utils.js";
 
 export const createLog = asyncHandler(async (req, res) => {
-  // Extract log details from the incoming request body
   const { timestamp, logLevel, source, message, environment } = req.body;
 
-  // Create a new log entry
   const log = await LOG.create({
     timestamp: timestamp ? new Date(timestamp) : Date.now(), // Convert to Date if timestamp is provided
     logLevel,
