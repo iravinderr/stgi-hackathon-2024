@@ -5,6 +5,9 @@ import { ModeToggle } from "./components/ui/mode-toggle";
 import DemoPage from "./assets/LogsTable/page";
 
 function App() {
+
+  
+
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       {
