@@ -1,9 +1,14 @@
 "use client"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import * as React from "react"
 import {
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getPaginationRowModel,
+  getSortedRowModel,
+ 
   useReactTable,
 } from "@tanstack/react-table"
 
@@ -16,16 +21,36 @@ import {
   TableRow
 } from "@/components/ui/table"
 
-export function DataTable({ columns, data }) {
+
+export function DataTable({ columns, data, ...props }) {
+  const [sorting, setSorting] = React.useState([])
+  const [columnFilters, setColumnFilters] = React.useState([])
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    onSortingChange: setSorting,
+    getSortedRowModel: getSortedRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
+    state: {
+      sorting,
+      columnFilters,
+    },
   })
 
   return (
-    <div> <div className="rounded-md border">
+    <div> <div className="flex items-center py-4">
+    <Input
+      placeholder="Filter Log Level..."
+      value={table.getColumn("logLevel")?.getFilterValue() ?? ""}
+      onChange={event =>
+        table.getColumn("logLevel")?.setFilterValue(event.target.value)
+      }
+      className="max-w-sm"
+    />
+  </div><div className="rounded-md border">
     <Table>
       <TableHeader>
         {table.getHeaderGroups().map(headerGroup => (
