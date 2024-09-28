@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { columns } from "./columns"
 import { DataTable } from "./data-table"
 import logsData from "../rawData"
@@ -7,17 +8,25 @@ import { getLogsAPI } from "@/services/apis"
 
 export default  function DemoPage() {
 
-  const getLogsHandler = async () => {
-    try {
-      const response = await axios.get(getLogsAPI)
-    } catch (error) {
-      
-    }
-  }
+  const [logData, setlogData] = useState([])
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get(getLogsAPI)
+        setlogData(response.data.data)
+      } catch (error) {
+        console.log("error -> ", error);
+        
+      }
+    })();
+  }, [])
+  
+ 
 
   return (
     <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={logsData} />
+      <DataTable columns={columns} data={logData} />
     </div>
   )
 }
