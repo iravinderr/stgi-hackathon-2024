@@ -28,6 +28,36 @@ const logsData = [
     logLevel: "DEBUG",
     source: "PaymentGateway",
     message: "Initiating payment process for transaction ID: 12345ABC",
+  },{
+    timestamp: "2024-09-28T10:20:00.000Z",
+    logLevel: "DEBUG",
+    source: "PaymentGateway",
+    message: "Initiating payment process for transaction ID: 12345ABC",
+  },{
+    timestamp: "2024-09-28T10:20:00.000Z",
+    logLevel: "DEBUG",
+    source: "PaymentGateway",
+    message: "Initiating payment process for transaction ID: 12345ABC",
+  },{
+    timestamp: "2024-09-28T10:20:00.000Z",
+    logLevel: "DEBUG",
+    source: "PaymentGateway",
+    message: "Initiating payment process for transaction ID: 12345ABC",
+  },{
+    timestamp: "2024-09-28T10:20:00.000Z",
+    logLevel: "DEBUG",
+    source: "PaymentGateway",
+    message: "Initiating payment process for transaction ID: 12345ABC",
+  },{
+    timestamp: "2024-09-28T10:20:00.000Z",
+    logLevel: "DEBUG",
+    source: "PaymentGateway",
+    message: "Initiating payment process for transaction ID: 12345ABC",
+  },{
+    timestamp: "2024-09-28T10:20:00.000Z",
+    logLevel: "DEBUG",
+    source: "PaymentGateway",
+    message: "Initiating payment process for transaction ID: 12345ABC",
   },
   {
     timestamp: "2024-09-28T10:25:00.000Z",
@@ -40,6 +70,18 @@ const logsData = [
     logLevel: "ERROR",
     source: "FileUploadService",
     message: "Failed to upload file: report.pdf",
+  },
+  {
+    timestamp: "2024-09-28T10:35:00.000Z",
+    logLevel: "FATAL",
+    source: "CoreSystem",
+    message: "System crash detected, initiating recovery process",
+  },
+  {
+    timestamp: "2024-09-28T10:35:00.000Z",
+    logLevel: "FATAL",
+    source: "CoreSystem",
+    message: "System crash detected, initiating recovery process",
   },
   {
     timestamp: "2024-09-28T10:35:00.000Z",
