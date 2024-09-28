@@ -12,25 +12,27 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       {
         <div>
-          {/* HEADER */}
+          <div className=" text-center  mt-6  justify-centerbold text-3xl">Logs Tracker</div>
           <div>
             <ModeToggle />
           </div>
           {/* HEADER */}
 
           {/* MAIN  */}
-          <div className="flex justify-evenly">
+          <div className="">
             <div>
-              <div className="flex  w-full h-full justify-evenly">
+              <div className="flex justify-around h-64 w-full">
+                <Component />
+                <Component />
                 <Component />
                 <Component />
               </div>
               <div className="flex mx-auto justify-evenly mt-6">
-                <Component />
-                <Component />
+                {/* <Component />
+                <Component /> */}
               </div>
             </div>{" "}
-            <div><DemoPage /></div>
+            <div className="flex container mx-auto w-10/12"><DemoPage /></div>
           </div>
         </div>
       }

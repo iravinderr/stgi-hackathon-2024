@@ -18,11 +18,11 @@ export default function Component() {
     <Card className="flex flex-col lg:max-w-md">
       <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2 [&>div]:flex-1">
         <div>
-          <CardDescription>Resting HR</CardDescription>
+          <CardDescription>Error Logs</CardDescription>
           <CardTitle className="flex items-baseline gap-1 text-4xl tabular-nums">
             62
             <span className="text-sm font-normal tracking-normal text-muted-foreground">
-              bpm
+             Last Hr
             </span>
           </CardTitle>
         </div>
