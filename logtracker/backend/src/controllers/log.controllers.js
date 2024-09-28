@@ -3,6 +3,9 @@ import { asyncHandler } from "../utils/handler.utils.js";
 import { ErrorResponse, SuccessResponse } from "../utils/responses.utils.js";
 
 export const createLog = asyncHandler(async (req, res) => {
+
+  console.log("req body -> ", req.body);
+  
   const { timestamp, logLevel, source, message, environment } = req.body;
 
   const log = await LOG.create({
