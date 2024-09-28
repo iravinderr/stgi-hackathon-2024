@@ -92,6 +92,6 @@ const logsData = [
 ];
 
 export const getLogs = asyncHandler(async (req, res) => {
-//   const logs = await LOG.find({}).sort({ timestamp: -1 });
-  return SuccessResponse(res, ``, logsData);
+  const logs = await LOG.find({}).sort({ timestamp: -1 });
+  return SuccessResponse(res, ``, logs);
 });
