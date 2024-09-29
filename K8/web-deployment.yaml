@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web-container
+          image: gurnxr/pyeditorial:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: web-env
+          volumeMounts:
+            - name: code-volume
+              mountPath: /code
+      volumes:
+        - name: code-volume
+          persistentVolumeClaim:
+            claimName: web-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  selector:
+    app: web
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: LoadBalancer
